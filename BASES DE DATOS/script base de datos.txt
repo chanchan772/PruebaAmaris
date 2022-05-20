@@ -1,0 +1,89 @@
+-- Table: public.Clases
+
+-- DROP TABLE IF EXISTS public."Clases";
+
+CREATE TABLE IF NOT EXISTS public."Clases"
+(
+    id integer NOT NULL,
+    "idModulo" integer,
+    "NombreClase" character varying(50) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Clases"
+    OWNER to postgres;
+	
+	
+-- Table: public.EstudianteModulo
+
+-- DROP TABLE IF EXISTS public."EstudianteModulo";
+
+CREATE TABLE IF NOT EXISTS public."EstudianteModulo"
+(
+    id integer NOT NULL ,
+    "idModulo" integer,
+    "idEstudiante" integer,
+    "idActivo" integer,
+    "idCalificacion" integer
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."EstudianteModulo"
+    OWNER to postgres;
+	
+
+
+-- Table: public.Estudiantes
+
+-- DROP TABLE IF EXISTS public."Estudiantes";
+
+CREATE TABLE IF NOT EXISTS public."Estudiantes"
+(
+    id integer NOT NULL ,
+    "Nombre" character varying(50) COLLATE pg_catalog."default",
+    "Cedula" character varying(50) COLLATE pg_catalog."default",
+    "Edad" integer,
+    "idTipoLic" integer,
+    CONSTRAINT "Estudiantes_pkey" PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Estudiantes"
+    OWNER to postgres;
+	
+	
+	
+-- Table: public.Licencia
+
+-- DROP TABLE IF EXISTS public."Licencia";
+
+CREATE TABLE IF NOT EXISTS public."Licencia"
+(
+    id integer NOT NULL ,
+    "Tipo" character varying(50) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Licencia"
+    OWNER to postgres;
+	
+	
+	
+-- Table: public.Modulo
+
+-- DROP TABLE IF EXISTS public."Modulo";
+
+CREATE TABLE IF NOT EXISTS public."Modulo"
+(
+    id integer NOT NULL ,
+    "NombreModulo" character varying(50) COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public."Modulo"
+    OWNER to postgres;	
